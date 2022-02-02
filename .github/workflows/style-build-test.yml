@@ -23,9 +23,9 @@ jobs:
       - name: "Install test dependencies"
         run: sudo apt install libboost-test-dev
       - name: "Create build directory"
-        run: mkdir build && cd build
+        run: mkdir build
       - name: "Build the code"
-        run: cmake .. && make -j
+        run: cd build && cmake .. && make -j
       - name: "Setup for artifact"
         run: tar -cvf build.tar build
       - name: "Upload build directory as artifact"

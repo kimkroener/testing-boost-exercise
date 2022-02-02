@@ -15,7 +15,6 @@ jobs:
         run: clang-format --dry-run -Werror tests/*.cpp
   build: 
     runs-on: ubuntu-latest
-    needs: style-check
     steps:
       - uses: actions/checkout@v2
       - name: "Install code dependencies"
@@ -49,5 +48,5 @@ jobs:
           name: build
       - name: "Unzip build directory"
         run: tar -xf build.tar
-      - name: "Ran tests"
+      - name: "Run tests"
         run: cd build && make test

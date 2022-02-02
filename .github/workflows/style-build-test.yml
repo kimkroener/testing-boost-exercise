@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: "Install clang"
+      - name: "Install clang formatter"
         run: sudo apt install clang-format
       - name: "Run style check on source files"
         run: clang-format --dry-run -Werror src/*
@@ -50,4 +50,3 @@ jobs:
         run: tar -xf build.tar
       - name: "Ran tests"
         run: cd build && make test
-        

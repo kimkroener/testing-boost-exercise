@@ -28,7 +28,7 @@ jobs:
       - name: "Setup for artifact"
         run: tar -cvf build.tar build
       - name: "Upload build directory as artifact"
-        run: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v2
         with:
           name: build
           path: build.tar

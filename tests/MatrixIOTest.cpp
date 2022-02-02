@@ -3,11 +3,11 @@
 #include "matrixIO.hpp"
 
 #include <Eigen/Dense>
-// #include <fstream>
+#include <fstream>
 #include <iostream>
 #include <vector>
 
-// using namespace std;
+using namespace std;
 using namespace Eigen;
 
 struct MatrixIOFixture {
@@ -18,7 +18,6 @@ struct MatrixIOFixture {
         -0.211234, 0.823295, 0.536459,
         0.566198, -0.604897, -0.444451;
   }
-
   MatrixXd expected;
 };
 
@@ -29,22 +28,12 @@ BOOST_AUTO_TEST_CASE(openDataM3)
   MatrixXd M;
   M = matrixIO::openData("../data/m3.csv", 3);
 
-  /*
+  
   for (int i = 0; i < 3; i++) {
     for (int j = 0; j < 3; j++) {
       BOOST_TEST(M(i, j) == expected(i, j));
     };
   };
-  */
-  BOOST_TEST(M(0, 0) == expected(0, 0));
-  BOOST_TEST(M(0, 1) == expected(0, 1));
-  BOOST_TEST(M(0, 2) == expected(0, 2));
-  BOOST_TEST(M(1, 0) == expected(1, 0));
-  BOOST_TEST(M(1, 1) == expected(1, 1));
-  BOOST_TEST(M(1, 2) == expected(1, 2));
-  BOOST_TEST(M(2, 0) == expected(2, 0));
-  BOOST_TEST(M(2, 1) == expected(2, 1));
-  BOOST_TEST(M(2, 2) == expected(2, 2));
 };
 
 BOOST_AUTO_TEST_SUITE_END()

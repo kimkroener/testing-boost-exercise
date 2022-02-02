@@ -1,3 +1,6 @@
+![style-build-test-action](https://github.com/kimkroener/testing-boost-exercise/actions/workflows/.github/workflows/style-build-test.yml/badge.svg)
+
+
 # SIDEMADE - Simple Dense Matrix Decomposition
 
 A simple demo code to read dense matrices from files and solve linear systems with them.

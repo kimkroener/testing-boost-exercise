@@ -10,26 +10,24 @@
 //using namespace std;
 using namespace Eigen;
 
-struct MatrixIOFixture 
-{
+struct MatrixIOFixture {
     MatrixIOFixture()
     {
-        expected = MatrixXd(3,3);
+        expected = MatrixXd(3, 3);
         expected << 0.680375, 0.59688, -0.329554,
                     -0.211234, 0.823295, 0.536459,
                     0.566198, -0.604897, -0.444451;
     }
 
-    MatrixXd expected; 
+    MatrixXd expected;
 }
-
 
 BOOST_FIXTURE_TEST_SUITE(MatrixIOTests, MatrixIOFixture, *boost::unit_test::tolerance(1e-8))
 
 BOOST_AUTO_TEST_CASE(openDataM3)
 {
     // read in data
-    MatrixXd M; 
+    MatrixXd M;
     M = matrixIO::openData("../data/m3.csv", 3);
 
     // compare to expected

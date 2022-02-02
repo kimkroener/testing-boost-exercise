@@ -28,7 +28,6 @@ BOOST_AUTO_TEST_CASE(openDataM3)
   MatrixXd M;
   M = matrixIO::openData("../data/m3.csv", 3);
 
-  
   for (int i = 0; i < 3; i++) {
     for (int j = 0; j < 3; j++) {
       BOOST_TEST(M(i, j) == expected(i, j));
